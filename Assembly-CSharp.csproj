@@ -45,11 +45,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Block.cs" />
-     <Compile Include="Assets\Scripts\BlockAir.cs" />
-     <Compile Include="Assets\Scripts\BlockGrass.cs" />
+     <Compile Include="Assets\Scripts\Blocks\Block.cs" />
+     <Compile Include="Assets\Scripts\Blocks\BlockAir.cs" />
+     <Compile Include="Assets\Scripts\Blocks\BlockGrass.cs" />
      <Compile Include="Assets\Scripts\Chunk.cs" />
      <Compile Include="Assets\Scripts\MeshData.cs" />
+     <Compile Include="Assets\Scripts\Modify.cs" />
+     <Compile Include="Assets\Scripts\Serialization.cs" />
+     <Compile Include="Assets\Scripts\Terrain.cs" />
+     <Compile Include="Assets\Scripts\World.cs" />
+     <Compile Include="Assets\Scripts\WorldPos.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>

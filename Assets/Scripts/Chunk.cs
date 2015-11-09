@@ -10,45 +10,28 @@ public class Chunk : MonoBehaviour
     
     public static int CHUNK_SIZE = 16;
     public bool update = true;
-    Block[,,] blocks;
+
+    public World world;
+    public WorldPos pos;
+
+    public Block[,,] blocks = new Block[CHUNK_SIZE, CHUNK_SIZE, CHUNK_SIZE];
 
     MeshFilter filter;
     MeshCollider coll;
 
-    // Use this for initialization
     void Start()
     {
         filter = gameObject.GetComponent<MeshFilter>();
         coll = gameObject.GetComponent<MeshCollider>();
-
-        blocks = new Block[CHUNK_SIZE, CHUNK_SIZE, CHUNK_SIZE];
-
-        for (int x = 0; x < CHUNK_SIZE; x++)
-        {
-            for (int y = 0; y < CHUNK_SIZE; y++)
-            {
-                for (int z = 0; z < CHUNK_SIZE; z++)
-                {
-                    blocks[x, y, z] = new BlockAir();
-                }
-            }
-        }
-
-        blocks[3, 5, 2] = new Block();
-        blocks[4, 5, 2] = new BlockGrass();
-
-        UpdateChunk();
     }
-    
-    // Update is called once per frame
+
     void Update()
     {
-    
-    }
-
-    public Block GetBlock(int x, int y, int z)
-    {
-        return blocks [x, y, z];
+        if (update)
+        {
+            update = false;
+            UpdateChunk();
+        }
     }
 
     void UpdateChunk()
@@ -83,5 +66,37 @@ public class Chunk : MonoBehaviour
         mesh.triangles = meshData.colTriangles.ToArray();
         mesh.RecalculateNormals();
         coll.sharedMesh = mesh;
+    }
+    
+    public static bool InRange(int index)
+    {
+        if (index < 0 || index >= CHUNK_SIZE)
+        {
+            return false;
+        }
+        
+        return true;
+    }
+    
+    public Block GetBlock(int x, int y, int z)
+    {
+        if (InRange(x) && InRange(y) && InRange(z)) 
+        {
+            return blocks [x, y, z];
+        }
+        
+        return world.GetBlock(pos.x + x, pos.y + y, pos.z + z);
+    }
+
+    public void SetBlock(int x, int y, int z, Block block)
+    {
+        if (InRange(x) && InRange(y) && InRange(z))
+        {
+            blocks[x, y, z] = block;
+        }
+        else
+        {
+            world.SetBlock(pos.x + x, pos.y + y, pos.z + z, block);
+        }
     }
 }

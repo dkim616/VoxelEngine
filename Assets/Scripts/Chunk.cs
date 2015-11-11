@@ -66,7 +66,15 @@ public class Chunk : MonoBehaviour
         mesh.triangles = meshData.colTriangles.ToArray();
         mesh.RecalculateNormals();
         coll.sharedMesh = mesh;
-    }
+	}
+	
+	public void SetBlockUnmodified()
+	{
+		foreach (Block block in blocks)
+		{
+			block.changed = false;
+		}
+	}
     
     public static bool InRange(int index)
     {

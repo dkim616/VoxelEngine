@@ -60,11 +60,11 @@ public class World : MonoBehaviour
 
         chunks.Add(worldPos, newChunk);
 
-        bool loaded = Serialization.Load(newChunk);
-        if (loaded)
-        {
-            return;
-        }
+//        bool loaded = Serialization.Load(newChunk);
+//        if (loaded)
+//        {
+//            return;
+//        }
 
         for (int xi = 0; xi < 16; xi++)
         {
@@ -83,6 +83,10 @@ public class World : MonoBehaviour
                 }
             }
         }
+
+        newChunk.SetBlockUnmodified();
+
+        Serialization.Load(newChunk);
     }
 
     public void DestroyChunk(int x, int y, int z)

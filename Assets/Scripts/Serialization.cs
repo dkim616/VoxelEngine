@@ -23,13 +23,14 @@ public static class Serialization
 
     public static string FileName(WorldPos chunkLocation)
     {
-        string fileName = chunkLocation.x + "," + chunkLocation.y + "," + chunkLocation.z + ".bin";
+        string fileName = chunkLocation.x + "_" + chunkLocation.y + "_" + chunkLocation.z + ".bin";
         return fileName;
     }
 
     public static void SaveChunk(Chunk chunk)
     {
         Save save = new Save(chunk);
+        Debug.Log(save.blocks.Count);
         if (save.blocks.Count == 0)
         {
             return;

@@ -9,44 +9,44 @@ public class World : MonoBehaviour
 
     public string worldName = "world";
 
-    public int newChunkX;
-    public int newChunkY;
-    public int newChunkZ;
+//    public int newChunkX;
+//    public int newChunkY;
+//    public int newChunkZ;
+//
+//    public bool genChunk;
 
-    public bool genChunk;
-
-    void Start()
-    {
-        for (int x = -4; x < 4; x++)
-        {
-            for (int y = -1; y < 3; y++)
-            {
-                for (int z = -4; z < 4; z++)
-                {
-                    CreateChunk(x * 16, y * 16, z * 16);
-                }
-            }
-        }
-    }
-
-    void Update()
-    {
-        if (genChunk)
-        {
-            genChunk = false;
-            WorldPos chunkPos = new WorldPos(newChunkX, newChunkY, newChunkZ);
-            Chunk chunk = null;
-
-            if (chunks.TryGetValue(chunkPos, out chunk))
-            {
-                DestroyChunk(chunkPos.x, chunkPos.y, chunkPos.z);
-            }
-            else
-            {
-                CreateChunk(chunkPos.x, chunkPos.y, chunkPos.z);
-            }
-        }
-    }
+//    void Start()
+//    {
+//        for (int x = -4; x < 4; x++)
+//        {
+//            for (int y = -1; y < 3; y++)
+//            {
+//                for (int z = -4; z < 4; z++)
+//                {
+//                    CreateChunk(x * 16, y * 16, z * 16);
+//                }
+//            }
+//        }
+//    }
+//
+//    void Update()
+//    {
+//        if (genChunk)
+//        {
+//            genChunk = false;
+//            WorldPos chunkPos = new WorldPos(newChunkX, newChunkY, newChunkZ);
+//            Chunk chunk = null;
+//
+//            if (chunks.TryGetValue(chunkPos, out chunk))
+//            {
+//                DestroyChunk(chunkPos.x, chunkPos.y, chunkPos.z);
+//            }
+//            else
+//            {
+//                CreateChunk(chunkPos.x, chunkPos.y, chunkPos.z);
+//            }
+//        }
+//    }
 
     public void CreateChunk(int x, int y, int z)
     {
@@ -94,11 +94,9 @@ public class World : MonoBehaviour
 
     public void DestroyChunk(int x, int y, int z)
     {
-        Debug.Log("Destroy");
         Chunk chunk = null;
         if (chunks.TryGetValue(new WorldPos(x, y, z), out chunk))
         {
-            Debug.Log("Found");
             Serialization.SaveChunk(chunk);
             Object.Destroy(chunk.gameObject);
             chunks.Remove(new WorldPos(x, y, z));

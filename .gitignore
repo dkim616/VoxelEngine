@@ -5,6 +5,7 @@ Assets/SampleScenes*
 .DS_Store
 Library/AssetImportState
 Library/AssetServerCacheV3
+Library/CrashedAssetImports.txt
 Library/FailedAssetImports.txt
 Library/ScriptAssemblies
 Library/ScriptMapper

@@ -7,9 +7,9 @@ using System.Collections;
 
 public class Chunk : MonoBehaviour
 {
-    
     public static int CHUNK_SIZE = 16;
-    public bool update = true;
+    public bool update = false;
+	public bool rendered = false;
 
     public World world;
     public WorldPos pos;
@@ -36,6 +36,7 @@ public class Chunk : MonoBehaviour
 
     void UpdateChunk()
     {
+        rendered = true;
         MeshData meshData = new MeshData();
 
         for (int x = 0; x < CHUNK_SIZE; x++)

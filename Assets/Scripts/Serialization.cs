@@ -30,7 +30,7 @@ public static class Serialization
     public static void SaveChunk(Chunk chunk)
     {
         Save save = new Save(chunk);
-        Debug.Log(save.blocks.Count);
+
         if (save.blocks.Count == 0)
         {
             return;

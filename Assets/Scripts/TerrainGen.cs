@@ -15,6 +15,9 @@ public class TerrainGen {
     float dirtBaseHeight = 1;
     float dirtNoise = 0.04f;
     float dirtNoiseHeight = 3;
+
+	float caveFrequency = 0.025f;
+	int caveSize = 7;
     
     public static int GetNoise(int x, int y, int z, float scale, int max)
     {
@@ -51,6 +54,8 @@ public class TerrainGen {
 
         for (int y = chunk.pos.y; y < chunk.pos.y + Chunk.CHUNK_SIZE; y++)
         {
+			int caveChance = GetNoise(x, y, z, caveFrequency, 100);
+
             if (y <= stoneHeight)
             {
                 chunk.SetBlock(x - chunk.pos.x, y - chunk.pos.y, z - chunk.pos.z, new Block());

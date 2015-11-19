@@ -16,19 +16,25 @@ public struct WorldPos
 
     public override bool Equals(object obj)
     {
-        if (!(obj is WorldPos))
-        {
-            return false;
-        }
+        if (GetHashCode() == obj.GetHashCode())
+		{
+			return true;
+		}
 
-        WorldPos pos = (WorldPos)obj;
-        if (pos.x != x || pos.y != y || pos.z != z)
-        {
-            return false;
-        } 
-        else
-        {
-            return true;
-        }
+		return false;
     }
+
+	public override int GetHashCode ()
+	{
+		unchecked
+		{
+			int hash = 47;
+
+			hash = hash * 227 + x.GetHashCode();
+			hash = hash * 227 + y.GetHashCode();
+			hash = hash * 227 + z.GetHashCode();
+
+			return hash;
+		}
+	}
 }

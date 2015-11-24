@@ -16,9 +16,6 @@ public class BlockLeaves : Block
         tile.x = 0;
         tile.y = 1;
         
-        tile.x = 1;
-        tile.y = 1;
-        
         return tile;
     }
     

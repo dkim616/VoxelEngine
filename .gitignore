@@ -3,6 +3,7 @@ Assets/Standard\ Assets*
 Assets/SampleScenes*
 
 .DS_Store
+.vs
 Library/AssetImportState
 Library/AssetServerCacheV3
 Library/CrashedAssetImports.txt
@@ -19,4 +20,3 @@ Library/guidmapper
 Temp
 *.csproj
 *.pidb
-*.vs

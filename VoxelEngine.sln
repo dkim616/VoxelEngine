@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoxelEngine.CSharp.Plugins", "VoxelEngine.CSharp.Plugins.csproj", "{E94B6167-51C3-DF96-7399-D212A11CCB94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoxelEngine.CSharp", "VoxelEngine.CSharp.csproj", "{5A71082C-D66D-F798-B040-E1B88AB6F026}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoxelEngine.CSharp.Editor", "VoxelEngine.CSharp.Editor.csproj", "{5EFFEA8B-CCDC-E01A-FF79-AA5F4086FFF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E94B6167-51C3-DF96-7399-D212A11CCB94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E94B6167-51C3-DF96-7399-D212A11CCB94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E94B6167-51C3-DF96-7399-D212A11CCB94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E94B6167-51C3-DF96-7399-D212A11CCB94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A71082C-D66D-F798-B040-E1B88AB6F026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A71082C-D66D-F798-B040-E1B88AB6F026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A71082C-D66D-F798-B040-E1B88AB6F026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A71082C-D66D-F798-B040-E1B88AB6F026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EFFEA8B-CCDC-E01A-FF79-AA5F4086FFF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EFFEA8B-CCDC-E01A-FF79-AA5F4086FFF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EFFEA8B-CCDC-E01A-FF79-AA5F4086FFF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EFFEA8B-CCDC-E01A-FF79-AA5F4086FFF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

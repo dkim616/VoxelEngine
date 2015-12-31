@@ -19,3 +19,4 @@ Library/guidmapper
 Temp
 *.csproj
 *.pidb
+*.vs
